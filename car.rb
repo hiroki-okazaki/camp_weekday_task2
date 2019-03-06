@@ -4,7 +4,8 @@ class Car
   DOWN_SPEED = 20
 
   @@count = 0
-  attr_accessor :number, :color
+  MAX_PASSENGERS = 4
+  attr_accessor :number, :color, :passengers
   # speedは外部から設定しないのでreaderで定義
   # @speedが使えるようになる
   attr_reader :speed
@@ -15,6 +16,7 @@ class Car
     # @speedを初期化
     @speed = 0
     @@count += 1
+    @passengers = 1
   end
 
   # 加速用のメソッド追加
@@ -36,6 +38,15 @@ class Car
              else
                @speed - DOWN_SPEED
              end
+  end
+
+  def get_on
+    if MAX_PASSENGERS <= @passengers
+       puts "乗車できません。この車の最大乗車人数は#{MAX_PASSENGERS}です。"
+    else
+       @passengers += 1
+       puts "乗車しました。"
+    end
   end
 
   def self.count
