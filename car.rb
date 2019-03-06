@@ -42,15 +42,19 @@ class Car
 
   def get_on
     if MAX_PASSENGERS <= @passengers
-       puts "乗車できません。この車の最大乗車人数は#{MAX_PASSENGERS}です。"
+      puts "乗車できません。この車の最大乗車人数は#{MAX_PASSENGERS}です。"
     else
-       @passengers += 1
-       puts "乗車しました。"
+      @passengers += 1
+      puts "乗車しました。"
     end
   end
 
   def self.count
     @@count  # return @@countの略
+  end
+
+  def self.count_info
+    "Carクラスのクラス変数@@countは#{@@count}です。"
   end
 end
 
