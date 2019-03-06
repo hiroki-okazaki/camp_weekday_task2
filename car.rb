@@ -63,6 +63,7 @@ class TrackCar < Car
   attr_accessor :load_weight
 
   def initialize(number, color, load_weight=500)
+    super(number, color)
     @load_weight = load_weight
   end
 end
